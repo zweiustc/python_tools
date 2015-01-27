@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/inf/hw/!svn/ver/1157/trunk/ssd/api
+END
+ssd_api.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/inf/hw/!svn/ver/1247/trunk/ssd/api/ssd_api.c
+END
+ssd_api.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/inf/hw/!svn/ver/1247/trunk/ssd/api/ssd_api.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/inf/hw/!svn/ver/946/trunk/ssd/api/Makefile
+END

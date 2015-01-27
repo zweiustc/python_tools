@@ -1,0 +1,377 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/inf/hw/!svn/ver/1133/trunk/ssd/systest/src
+END
+test_multi_channel_read_3.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_read_3.c
+END
+test_ftw_flush.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/inf/hw/!svn/ver/1062/trunk/ssd/systest/src/test_ftw_flush.c
+END
+test_single_channel_write_nor.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_single_channel_write_nor.c
+END
+test_ftw_write_read_delete_multi.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/inf/hw/!svn/ver/1062/trunk/ssd/systest/src/test_ftw_write_read_delete_multi.c
+END
+test_single_channel_write_dispatch.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_single_channel_write_dispatch.c
+END
+clear_all_add_id.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/clear_all_add_id.c
+END
+test_util_all.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_util_all.c
+END
+test_close_ab.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_close_ab.c
+END
+test_single_channel_delete_nor.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_single_channel_delete_nor.c
+END
+test_multi_channel_write_one_id.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_write_one_id.c
+END
+test_ftw_multi.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/inf/hw/!svn/ver/1062/trunk/ssd/systest/src/test_ftw_multi.c
+END
+test_multi_channel_read_delete_one_id.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_read_delete_one_id.c
+END
+test_multi_channel_write_1.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_write_1.c
+END
+test_multi_channel_write_2.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_write_2.c
+END
+test_util.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_util.c
+END
+test_multi_channel_write_3.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/inf/hw/!svn/ver/1064/trunk/ssd/systest/src/test_multi_channel_write_3.c
+END
+test_single_channel_read_nor.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_single_channel_read_nor.c
+END
+test_close_nor.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_close_nor.c
+END
+test_multi_channel_write_read_delete_1.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_write_read_delete_1.c
+END
+test_multi_channel_write_read_delete_2.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_write_read_delete_2.c
+END
+check_all_add_id.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/check_all_add_id.c
+END
+test_multi_channel_read_one_id.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_read_one_id.c
+END
+test_multi_channel_write_delete_one_id.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_write_delete_one_id.c
+END
+test_multi_channel_write_almost_full.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_write_almost_full.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/Makefile
+END
+test_multi_channel_write_delete_1.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_write_delete_1.c
+END
+test_multi_channel_write_delete_2.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_write_delete_2.c
+END
+test_multi_channel_write_delete_3.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_write_delete_3.c
+END
+test_multi_channel_compare_data_1.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_compare_data_1.c
+END
+test_multi_channel_compare_data_2.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_compare_data_2.c
+END
+test_multi_channel_compare_data_3.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_compare_data_3.c
+END
+test_open_ab.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_open_ab.c
+END
+open_newcard.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/open_newcard.c
+END
+test_close_write_read_delete_multi.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/inf/hw/!svn/ver/1062/trunk/ssd/systest/src/test_close_write_read_delete_multi.c
+END
+test_single_channel_read_ab.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/inf/hw/!svn/ver/1064/trunk/ssd/systest/src/test_single_channel_read_ab.c
+END
+check_all.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/check_all.c
+END
+test_multi_channel_write_read_1.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_write_read_1.c
+END
+test_multi_channel_write_read_2.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_write_read_2.c
+END
+test_multi_channel_write_read_3.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_write_read_3.c
+END
+test_util_multi_thread.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_util_multi_thread.c
+END
+test_open_close_all.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/inf/hw/!svn/ver/1064/trunk/ssd/systest/src/test_open_close_all.c
+END
+test_multi_channel_read_delete_1.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_read_delete_1.c
+END
+test_close_multi.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/inf/hw/!svn/ver/1062/trunk/ssd/systest/src/test_close_multi.c
+END
+clear_all.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/clear_all.c
+END
+test_compare_data.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_compare_data.c
+END
+test_open_nor.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_open_nor.c
+END
+test_multi_channel_read_delete_2.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_read_delete_2.c
+END
+test_multi_channel_read_delete_3.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_read_delete_3.c
+END
+test_multi_channel_delete_one_id.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_delete_one_id.c
+END
+test_flush.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_flush.c
+END
+test_flush_write_read_delete_multi.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/inf/hw/!svn/ver/1040/trunk/ssd/systest/src/test_flush_write_read_delete_multi.c
+END
+test_multi_channel_delete_1.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_delete_1.c
+END
+test_multi_channel_delete_2.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_delete_2.c
+END
+test_single_channel_write_ab.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_single_channel_write_ab.c
+END
+test_multi_channel_delete_3.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_delete_3.c
+END
+clear_some_id.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/clear_some_id.c
+END
+test_flush_multi.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/inf/hw/!svn/ver/1040/trunk/ssd/systest/src/test_flush_multi.c
+END
+write_almost_full.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/write_almost_full.c
+END
+test_multi_channel_full_channel.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_full_channel.c
+END
+test_single_channel_delete_ab.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_single_channel_delete_ab.c
+END
+test_multi_channel_read_1.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_read_1.c
+END
+test_multi_channel_read_2.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/test_multi_channel_read_2.c
+END

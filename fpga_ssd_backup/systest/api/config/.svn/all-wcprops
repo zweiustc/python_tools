@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/inf/hw/!svn/ver/1098/trunk/ssd/systest/api/config
+END
+write_fault.ini
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/inf/hw/!svn/ver/1098/trunk/ssd/systest/api/config/write_fault.ini
+END
+read_fault.ini
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/inf/hw/!svn/ver/1098/trunk/ssd/systest/api/config/read_fault.ini
+END
+util_fault.ini
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/inf/hw/!svn/ver/1098/trunk/ssd/systest/api/config/util_fault.ini
+END
+ftw_fault.ini
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/inf/hw/!svn/ver/1098/trunk/ssd/systest/api/config/ftw_fault.ini
+END
+open_fault.ini
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/inf/hw/!svn/ver/1098/trunk/ssd/systest/api/config/open_fault.ini
+END
+delete_fault.ini
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/inf/hw/!svn/ver/1098/trunk/ssd/systest/api/config/delete_fault.ini
+END

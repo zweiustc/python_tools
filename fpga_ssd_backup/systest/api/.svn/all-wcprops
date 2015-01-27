@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/inf/hw/!svn/ver/1098/trunk/ssd/systest/api
+END
+bhp-lib.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/inf/hw/!svn/ver/1098/trunk/ssd/systest/api/bhp-lib.h
+END
+ssd_api.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/inf/hw/!svn/ver/1098/trunk/ssd/systest/api/ssd_api.c
+END
+IniFile.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/inf/hw/!svn/ver/1098/trunk/ssd/systest/api/IniFile.h
+END
+ssd_api.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/inf/hw/!svn/ver/1098/trunk/ssd/systest/api/ssd_api.h
+END
+iniFileRW.C
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/inf/hw/!svn/ver/1098/trunk/ssd/systest/api/iniFileRW.C
+END
+ds-crc.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/inf/hw/!svn/ver/1098/trunk/ssd/systest/api/ds-crc.c
+END

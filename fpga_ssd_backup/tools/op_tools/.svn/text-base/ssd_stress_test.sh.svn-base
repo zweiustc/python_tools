@@ -1,0 +1,39 @@
+#!/bin/sh
+# Filename : ssd_stress_test.sh
+# Function : test for the process -> SSD-open & write & read each channel & close 
+#            when open failed, S6 logic will be reload till success or arrive 10 times
+# 2013-09-29 created by zhangwei<zhangwei29@baidu.com>
+# Copyright  (c)  2001 baidu.com
+
+for ((cnt=0; cnt < 10; ++cnt))
+do 
+    ./open
+    if [ $? -ne 0 ] && [ $? -ne -25 ];
+    then  
+         ./wr_n 0x80f8 0 && ./wr_n 0x80f8 1 && ./wr_n 0x80e8 1 && ./cfg_s6_n_40 1 && ./wr_n 0x80e8 1
+    else
+         break 1
+    fi
+done
+
+if [ ${cnt} -ge 10 ];
+then 
+    echo " load s6 failed!"
+    exit -1
+fi
+
+./close_force
+
+id_num="200"  # id num write to each channel per cycle
+
+for ((cnt = 0; cnt < 400; ++cnt))
+do
+    ./ssd_check_all ${id_num}
+    if [ $? -ne 0 ];
+    then
+       echo "stress test failed"
+       exit -1
+    fi
+    echo "cycle is ${cnt}"
+done
+

@@ -1,0 +1,96 @@
+diff -r api_trunk/ssd_api.c api/ssd_api.c
+30a31,36
+> /* for cfg_flash*/
+> const int SPI_ADDR_CTRL       =   0x8040;
+> const int S6_ADDR             =   0x400000;
+> const int CMD_READ            =   0x01;
+> const int SPI_ADDR_STATUS     =   0x8048;
+> 
+83a90,152
+> // check status of hardware to see busy or not
+> static int check_status(int sleep_time)
+> {
+>     int timeout = 0;
+>     volatile uint64_t status1 = 0xffff; 
+>     volatile uint64_t status2 = 0xffff;
+> 
+>     while ((status1 & 0x01) || (status2 & 0x0f0000)) {
+>         if (sleep_time) {
+>             sleep(sleep_time);
+>         }
+>         timeout++;
+>         if (6 < timeout) {
+>             return -1;
+>         }
+>         status1 = ssd_reg_read(SPI_ADDR_STATUS); 
+>         status2 = ssd_reg_read(0x8068); 
+>     }
+> 
+>     return 0;
+> }
+> 
+> static inline int cfg_s6()
+> {
+>     int ret = check_status(1);
+>     if (ret != 0) {
+>         printf("cfg_s6 : Read status timeout!\n");
+>         return -1;
+>     }
+>     
+>     //send read command
+>     ssd_reg_write(SPI_ADDR_CTRL, S6_ADDR | CMD_READ);
+>     usleep(1000);   
+>     
+>     //read status
+>     sleep(1);
+>     ret = check_status(1);
+>     if (ret != 0) {
+>         printf("cfg_s6: Read status timeout after cfg_s6 cmd!\n");
+>     }
+> 
+>     return ret;    
+> }
+> 
+> static inline int cfg_s6_times()
+> {
+>     int i, ret;
+> 
+>     for (i = 0; i < 5; i++) {
+>         ret = cfg_s6();
+>         if (ret == 0)
+>             break;
+>     }
+> 
+>     return ret;
+> }
+> 
+> static inline void hardware_reset()
+> {
+>     ssd_reg_write(0x80f8, 0);
+>     ssd_reg_write(0x80f8, 1);
+>     ssd_reg_write(0x80e8, 1);
+> }
+119,120c188,199
+<     ret = ioctl(g_ssd_fd[0], IOCTL_OPEN, NULL);
+<     if(ret != SSD_OK)
+---
+>     int open_count;
+>     for (open_count = 0; open_count < 5; open_count++) {
+>         hardware_reset();
+>         ret = ioctl(g_ssd_fd[0], IOCTL_OPEN, NULL);
+>         if (ret == SSD_OK || ret == SSD_ERR_NOT_CLOSED)
+>             break;
+>         ret = cfg_s6_times();
+>         if (ret != SSD_OK)
+>             goto err;
+>     }
+> 
+>     if (ret != SSD_OK)
+406a486,488
+> 
+>     //printf("channel %d free blocks are : %llu\n", channel, blocks_idle);
+>     //printf("channel %d free bytes are :%llu\n".channel, (blocks_idle * SSD_BLOCK_SIZE));
+diff -r api_trunk/ssd_api.h api/ssd_api.h
+409a410,411
+> uint64_t ssd_reg_read(uint64_t addr);
+> int ssd_reg_write(uint64_t addr, uint64_t value);

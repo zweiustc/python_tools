@@ -1,0 +1,206 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+BT_DATA_BLOCK_NUM	ssd_api.h	53;"	d
+BT_DATA_SIZE	ssd_api.h	55;"	d
+BT_INDEX_BLOCK_NUM	ssd_api.h	52;"	d
+BT_INDEX_SIZE	ssd_api.h	54;"	d
+BlockId	ssd_api.h	/^struct BlockId $/;"	s
+CRC_BLOCK_HEADER	ssd_api.c	28;"	d	file:
+CRC_DATA	ssd_api.c	23;"	d	file:
+CRC_DATA_BIT	ssd_api.c	25;"	d	file:
+CRC_POLY	ssd_api.c	24;"	d	file:
+CRC_POLY_BIT	ssd_api.c	26;"	d	file:
+EIDUNVAL	ssd_api.h	/^    EIDUNVAL = 35,$/;"	e	enum:SSD_ERROR_TYPE
+EMETAUNVAL	ssd_api.h	/^    EMETAUNVAL = 34,$/;"	e	enum:SSD_ERROR_TYPE
+ENOMETA	ssd_api.h	/^    ENOMETA = 32,$/;"	e	enum:SSD_ERROR_TYPE
+EREADFLUSH	ssd_api.h	/^    EREADFLUSH = 33,$/;"	e	enum:SSD_ERROR_TYPE
+ETABLEDATA	ssd_api.h	/^    ETABLEDATA = 36,$/;"	e	enum:SSD_ERROR_TYPE
+IOCTL_CLOSE	ssd_api.h	347;"	d
+IOCTL_DELETE	ssd_api.h	349;"	d
+IOCTL_FLUSH	ssd_api.h	348;"	d
+IOCTL_IOC_MAGIC	ssd_api.h	345;"	d
+IOCTL_MARK_BAD_BLOCK	ssd_api.h	361;"	d
+IOCTL_MARK_ERASE_COUNT	ssd_api.h	362;"	d
+IOCTL_OPEN	ssd_api.h	346;"	d
+IOCTL_READ	ssd_api.h	351;"	d
+IOCTL_READ_FLUSH	ssd_api.h	363;"	d
+IOCTL_READ_ID_TABLE	ssd_api.h	354;"	d
+IOCTL_READ_TABLE	ssd_api.h	352;"	d
+IOCTL_REG_READ	ssd_api.h	358;"	d
+IOCTL_REG_WRITE	ssd_api.h	359;"	d
+IOCTL_SYS_INIT	ssd_api.h	356;"	d
+IOCTL_UNITTEST	ssd_api.h	355;"	d
+IOCTL_WRITE	ssd_api.h	350;"	d
+MAX_RETRY_TIMES	ssd_api.h	46;"	d
+MONITOR_DEV	ssd_api.h	58;"	d
+PARAM_BLOCK	ssd_api.h	186;"	d
+PARAM_ID	ssd_api.h	185;"	d
+PLANE_RESERVE_BLOCKS	ssd_api.h	36;"	d
+RESERVE_BLOCKS_PER_CHANNEL	ssd_api.h	47;"	d
+SSD_API_INCLUDED	ssd_api.h	12;"	d
+SSD_BLOCKS_PER_FLUSH_DATA	ssd_api.h	44;"	d
+SSD_BLOCK_SHIFT	ssd_api.h	49;"	d
+SSD_BLOCK_SIZE	ssd_api.h	43;"	d
+SSD_CLOSED	ssd_api.h	34;"	d
+SSD_DEEPOCEAN_DEVICE_ID	ssd_api.h	51;"	d
+SSD_ERROR	ssd_api.h	/^    SSD_ERROR  = (-1),$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERROR_TYPE	ssd_api.h	/^ enum SSD_ERROR_TYPE{$/;"	g
+SSD_ERR_ALLOC_BLOCK	ssd_api.h	/^    SSD_ERR_ALLOC_BLOCK = 26,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_BAD_BLOCK	ssd_api.h	/^    SSD_ERR_BAD_BLOCK = 19,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_CHANNEL	ssd_api.h	/^    SSD_ERR_CHANNEL = 16, \/* the channel status is disable *\/$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_COPY_FROM_USER	ssd_api.h	/^    SSD_ERR_COPY_FROM_USER = 14,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_COPY_TO_USER	ssd_api.h	/^    SSD_ERR_COPY_TO_USER = 15,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_CRC	ssd_api.c	27;"	d	file:
+SSD_ERR_DEL_TIMER	ssd_api.h	/^    SSD_ERR_DEL_TIMER = 13,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_DMA_MAP	ssd_api.h	/^    SSD_ERR_DMA_MAP = 12,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_INVALID_PARAM	ssd_api.h	/^    SSD_ERR_INVALID_PARAM = 37,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_LEN_BLOCK_ALIGN	ssd_api.h	/^    SSD_ERR_LEN_BLOCK_ALIGN = 4,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_LEN_PAGE_ALIGN	ssd_api.h	/^    SSD_ERR_LEN_PAGE_ALIGN = 2,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_META_BLOCK_ALIGN	ssd_api.h	/^    SSD_ERR_META_BLOCK_ALIGN = 31,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_NOMEM	ssd_api.h	/^    SSD_ERR_NOMEM = 8,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_NOT_BAD_BLOCK	ssd_api.h	/^    SSD_ERR_NOT_BAD_BLOCK = 38,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_NOT_CLOSED	ssd_api.h	/^    SSD_ERR_NOT_CLOSED = 25,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_NOT_OPENED	ssd_api.h	/^    SSD_ERR_NOT_OPENED = 24,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_NOT_SSD	ssd_api.h	/^    SSD_ERR_NOT_SSD = 11,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_NO_DEV	ssd_api.h	/^    SSD_ERR_NO_DEV = 10,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_NO_INVALID_BLOCKS	ssd_api.h	/^    SSD_ERR_NO_INVALID_BLOCKS = 20,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_NO_VALID_FD	ssd_api.h	/^    SSD_ERR_NO_VALID_FD = 23,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_NO_VALID_RESERVE	ssd_api.h	/^    SSD_ERR_NO_VALID_RESERVE = 30,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_NULL	ssd_api.h	/^    SSD_ERR_NULL = 7,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_OEPN_DEV_FAILED	ssd_api.h	/^    SSD_ERR_OEPN_DEV_FAILED = 22,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_PARAM_OVERFLOW	ssd_api.h	/^    SSD_ERR_PARAM_OVERFLOW = 5,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_PARAM_WRLEN	ssd_api.h	/^    SSD_ERR_PARAM_WRLEN = 6,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_SSD	ssd_api.h	/^    SSD_ERR_SSD = 17, \/* the ssd status is disable *\/$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_START_BLOCK_ALIGN	ssd_api.h	/^    SSD_ERR_START_BLOCK_ALIGN = 3,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_START_PAGE_ALIGN	ssd_api.h	/^    SSD_ERR_START_PAGE_ALIGN = 1,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_TABLE_TYPE	ssd_api.h	/^    SSD_ERR_TABLE_TYPE = 21,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_TIMEOUT	ssd_api.h	/^    SSD_ERR_TIMEOUT = 9,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ERR_WAIT	ssd_api.h	/^    SSD_ERR_WAIT = 18, \/* the operation is wait for complete *\/$/;"	e	enum:SSD_ERROR_TYPE
+SSD_FLUSH_DATA_SIZE	ssd_api.h	45;"	d
+SSD_ID_ALREADY_EXIST	ssd_api.h	/^    SSD_ID_ALREADY_EXIST = 28,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ID_MAP_ERROR	ssd_api.h	/^    SSD_ID_MAP_ERROR = 29,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_ID_NO_EXIST	ssd_api.h	/^    SSD_ID_NO_EXIST = 27,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_MAX_CHANNEL	ssd_api.h	32;"	d
+SSD_MAX_DEVNAME	ssd_api.h	33;"	d
+SSD_MAX_ID_NUM	ssd_api.h	56;"	d
+SSD_MAX_PHYBLOCKS_PER_CHANNEL	ssd_api.h	39;"	d
+SSD_MAX_VIRBLOCKS	ssd_api.h	40;"	d
+SSD_MAX_VIRBLOCKS_PER_CHANNEL	ssd_api.h	38;"	d
+SSD_OK	ssd_api.h	/^    SSD_OK = 0,$/;"	e	enum:SSD_ERROR_TYPE
+SSD_OPENED	ssd_api.h	35;"	d
+SSD_PAGES_PER_BLOCK	ssd_api.h	42;"	d
+SSD_PAGE_SHIFT	ssd_api.h	48;"	d
+SSD_PAGE_SIZE	ssd_api.h	41;"	d
+SSD_TABLE_SIZE	ssd_api.h	37;"	d
+SSD_close	ssd_api.c	/^void SSD_close(int dev_num)$/;"	f
+SSD_close_force	ssd_api.c	/^void SSD_close_force(int dev_num)$/;"	f
+SSD_delete	ssd_api.c	/^int SSD_delete(int dev_num, struct BlockId id)$/;"	f
+SSD_flush	ssd_api.c	/^int SSD_flush(int dev_num)$/;"	f
+SSD_ftw	ssd_api.c	/^int SSD_ftw(int dev_num, int (*fn) (const char *fpath, const struct stat *sb, int typeflag), int depth)$/;"	f
+SSD_mark_bad_block	ssd_api.c	/^int SSD_mark_bad_block(int dev_num, int type, struct BlockId id, ssd_u16 block, ssd_u16 channel)$/;"	f
+SSD_mark_erase_count	ssd_api.c	/^int SSD_mark_erase_count(int dev_num, struct erase_entry_map *buffer, ssd_u16 count, ssd_u8 channel)$/;"	f
+SSD_open	ssd_api.c	/^int SSD_open(int dev_num)$/;"	f
+SSD_open_newcard	ssd_api.c	/^int SSD_open_newcard(int dev_num)$/;"	f
+SSD_read	ssd_api.c	/^int SSD_read(int dev_num, struct BlockId id, char *buffer, size_t count, off_t offset)$/;"	f
+SSD_read_addrtable	ssd_api.c	/^int SSD_read_addrtable(int channel, char *buf)$/;"	f
+SSD_read_erasetable	ssd_api.c	/^int SSD_read_erasetable(int channel, char *buf)$/;"	f
+SSD_read_flush	ssd_api.c	/^int SSD_read_flush(int dev_num, struct ssd_meta_version meta_version)$/;"	f
+SSD_util	ssd_api.c	/^uint64_t SSD_util(int dev_num)$/;"	f
+SSD_util_test	ssd_api.c	/^uint64_t SSD_util_test(int dev_num, int channel)$/;"	f
+SSD_write	ssd_api.c	/^int SSD_write(int dev_num, struct BlockId id, char * buffer, size_t count, off_t offset)$/;"	f
+TABLE_ADDR_TYPE	ssd_api.h	/^    TABLE_ADDR_TYPE  = 1,$/;"	e	enum:TABLE_TYPE
+TABLE_ERASE_TYPE	ssd_api.h	/^    TABLE_ERASE_TYPE = 0,$/;"	e	enum:TABLE_TYPE
+TABLE_TYPE	ssd_api.h	/^enum TABLE_TYPE {$/;"	g
+TABLE_TYPE_COUNT	ssd_api.h	/^    TABLE_TYPE_COUNT = 2,$/;"	e	enum:TABLE_TYPE
+addr	ssd_api.h	/^    ssd_u32 addr;      \/\/有效位1位, 冲突链的下一个位置19位$/;"	m	struct:id_entry
+addr	ssd_api.h	/^    ssd_u64 addr;$/;"	m	struct:ssd_regrd_param
+addr	ssd_api.h	/^    ssd_u64 addr;$/;"	m	struct:ssd_regwr_param
+addr_entry	ssd_api.h	/^struct addr_entry$/;"	s
+api_value	ssd_api.c	/^static inline int api_value(int value)$/;"	f	file:
+bad_flag	ssd_api.h	/^    ssd_u16  bad_flag    : 1;$/;"	m	struct:erase_entry
+block	ssd_api.h	/^            ssd_u16 block;$/;"	m	struct:ssd_mark_bad_param::<anonymous>::<anonymous>
+block	ssd_api.h	/^            ssd_u16 block;$/;"	m	struct:ssd_meta_version::<anonymous>::<anonymous>
+block	ssd_api.h	/^    ssd_u16 block;$/;"	m	struct:erase_entry_map
+block	ssd_api.h	/^    ssd_u32 block    :13;   \/* block = 0...19   *\/$/;"	m	struct:flush_id_info
+block_page	ssd_api.h	/^        }block_page;$/;"	m	union:ssd_meta_version::<anonymous>
+buf	ssd_api.h	/^    ssd_u8*  buf;         $/;"	m	struct:ssd_read_param
+buf	ssd_api.h	/^    ssd_u8*  buf;         $/;"	m	struct:ssd_write_param
+buff	ssd_api.h	/^    ssd_u8 *buff;$/;"	m	struct:ssd_meta_version
+channel	ssd_api.h	/^            ssd_u16 channel;$/;"	m	struct:ssd_mark_bad_param::<anonymous>::<anonymous>
+channel	ssd_api.h	/^    ssd_u32 channel  : 6;   \/* channel = 0...43 *\/$/;"	m	struct:flush_id_info
+channel	ssd_api.h	/^    ssd_u8 channel;    \/\/通道号:6位, 有效位1位$/;"	m	struct:id_entry
+channel	ssd_api.h	/^    ssd_u8 channel;$/;"	m	struct:ssd_mark_erase_count_param
+channel	ssd_api.h	/^    ssd_u8 channel;$/;"	m	struct:ssd_table_param
+count	ssd_api.h	/^    ssd_u16 count;$/;"	m	struct:ssd_mark_erase_count_param
+crc32	ssd_api.h	/^    ssd_u32 crc32;$/;"	m	struct:flush_id_info
+crc_fp	ssd_api.c	/^FILE *crc_fp = NULL;$/;"	v
+crc_proc	ssd_api.c	/^char *crc_proc = "\/var\/run\/ssd_crc";$/;"	v
+ee	ssd_api.h	/^    struct erase_entry ee;$/;"	m	struct:erase_entry_map
+erase_buffer	ssd_api.h	/^    ssd_u8 *erase_buffer;$/;"	m	struct:ssd_mark_erase_count_param
+erase_entry	ssd_api.h	/^struct erase_entry$/;"	s
+erase_entry_map	ssd_api.h	/^struct erase_entry_map$/;"	s
+erase_times	ssd_api.h	/^    ssd_u16  erase_times :13;$/;"	m	struct:erase_entry
+flush_id_info	ssd_api.h	/^struct flush_id_info$/;"	s
+g_opened_flag	ssd_api.c	/^int g_opened_flag = SSD_CLOSED;$/;"	v
+g_ssd_fd	ssd_api.c	/^int g_ssd_fd[SSD_MAX_CHANNEL];$/;"	v
+id	ssd_api.h	/^        struct ssd_blockid id;       $/;"	m	union:ssd_mark_bad_param::<anonymous>
+id	ssd_api.h	/^    struct ssd_blockid id;$/;"	m	struct:flush_id_info
+id	ssd_api.h	/^    struct ssd_blockid id;$/;"	m	struct:id_entry
+id	ssd_api.h	/^    struct ssd_blockid id;$/;"	m	struct:ssd_read_param
+id	ssd_api.h	/^    struct ssd_blockid id;$/;"	m	struct:ssd_write_param
+id2channel	ssd_api.c	/^static inline int id2channel(struct BlockId id)$/;"	f	file:
+id_entry	ssd_api.h	/^struct id_entry$/;"	s
+idtochar	ssd_api.c	/^inline void idtochar(char *pbuf, struct ssd_blockid id)$/;"	f
+key	ssd_api.c	/^unsigned long long key;$/;"	v
+len	ssd_api.h	/^    ssd_u32  len; $/;"	m	struct:ssd_read_param
+len	ssd_api.h	/^    ssd_u32  len; $/;"	m	struct:ssd_write_param
+len	ssd_api.h	/^    ssd_u32 len      : 1;   \/* 0=2M, 1=10M      *\/$/;"	m	struct:flush_id_info
+m_nHigh	ssd_api.h	/^    ssd_u64 m_nHigh;$/;"	m	struct:ssd_blockid
+m_nHigh	ssd_api.h	/^    uint64_t m_nHigh; \/\/\/< high 64 bits$/;"	m	struct:BlockId
+m_nLow	ssd_api.h	/^    ssd_u64 m_nLow;  $/;"	m	struct:ssd_blockid
+m_nLow	ssd_api.h	/^    uint64_t m_nLow;  \/\/\/< low 64 bits$/;"	m	struct:BlockId
+offset	ssd_api.h	/^    ssd_u32  offset;$/;"	m	struct:ssd_read_param
+pad	ssd_api.h	/^            ssd_u32 pad[3];$/;"	m	struct:ssd_mark_bad_param::<anonymous>::<anonymous>
+page	ssd_api.h	/^            ssd_u8 page;$/;"	m	struct:ssd_meta_version::<anonymous>::<anonymous>
+param_block	ssd_api.h	/^        } param_block;$/;"	m	union:ssd_mark_bad_param::<anonymous>
+pb_addr	ssd_api.h	/^    ssd_u16  pb_addr  :13;$/;"	m	struct:addr_entry
+reserved	ssd_api.h	/^    ssd_u16  reserved    : 1;$/;"	m	struct:erase_entry
+reserved	ssd_api.h	/^    ssd_u16  reserved : 3;$/;"	m	struct:addr_entry
+ret_value	ssd_api.h	/^    ssd_u64 *ret_value;$/;"	m	struct:ssd_regrd_param
+set_stat	ssd_api.c	/^inline void set_stat(struct stat *sb, struct flush_id_info *buffer)$/;"	f
+ssd_blockid	ssd_api.h	/^struct ssd_blockid$/;"	s
+ssd_mark_bad_param	ssd_api.h	/^struct ssd_mark_bad_param$/;"	s
+ssd_mark_erase_count_param	ssd_api.h	/^struct ssd_mark_erase_count_param$/;"	s
+ssd_meta_version	ssd_api.h	/^struct ssd_meta_version$/;"	s
+ssd_read_param	ssd_api.h	/^struct ssd_read_param$/;"	s
+ssd_readid_param	ssd_api.h	/^struct ssd_readid_param$/;"	s
+ssd_reg_read	ssd_api.c	/^uint64_t ssd_reg_read(uint64_t addr)$/;"	f
+ssd_reg_write	ssd_api.c	/^int ssd_reg_write(uint64_t addr, uint64_t value)$/;"	f
+ssd_regrd_param	ssd_api.h	/^struct ssd_regrd_param$/;"	s
+ssd_regwr_param	ssd_api.h	/^struct ssd_regwr_param$/;"	s
+ssd_s16	ssd_api.h	/^typedef short               ssd_s16;$/;"	t
+ssd_s32	ssd_api.h	/^typedef int                 ssd_s32;$/;"	t
+ssd_s64	ssd_api.h	/^typedef long long           ssd_s64;$/;"	t
+ssd_s8	ssd_api.h	/^typedef signed char         ssd_s8;$/;"	t
+ssd_table_param	ssd_api.h	/^struct ssd_table_param$/;"	s
+ssd_u16	ssd_api.h	/^typedef unsigned short      ssd_u16;$/;"	t
+ssd_u32	ssd_api.h	/^typedef unsigned int        ssd_u32;$/;"	t
+ssd_u64	ssd_api.h	/^typedef unsigned long long  ssd_u64;$/;"	t
+ssd_u8	ssd_api.h	/^typedef unsigned char       ssd_u8;$/;"	t
+ssd_write_param	ssd_api.h	/^struct ssd_write_param$/;"	s
+table	ssd_api.c	/^unsigned long long table[256];$/;"	v
+type	ssd_api.h	/^    ssd_u8 type;  \/* table type *\/$/;"	m	struct:ssd_table_param
+type	ssd_api.h	/^    ssd_u8 type; \/\/0 param_id, 1 param_block$/;"	m	struct:ssd_mark_bad_param
+u	ssd_api.h	/^    } u;$/;"	m	struct:ssd_mark_bad_param
+u64tochar	ssd_api.c	/^void u64tochar(char *pbuf, ssd_u64 num)$/;"	f
+use_flag	ssd_api.h	/^    ssd_u16  use_flag    : 1;$/;"	m	struct:erase_entry
+usr_buf	ssd_api.h	/^    ssd_u8* usr_buf;    $/;"	m	struct:ssd_table_param
+usr_buf	ssd_api.h	/^    ssd_u8* usr_buf;$/;"	m	struct:ssd_readid_param
+value	ssd_api.h	/^    ssd_u64 value;$/;"	m	struct:ssd_regwr_param
+vbp	ssd_api.h	/^    }vbp;$/;"	m	struct:ssd_meta_version
+version	ssd_api.h	/^        ssd_u64 version;$/;"	m	union:ssd_meta_version::<anonymous>
+version_flag	ssd_api.h	/^    ssd_u8 version_flag;$/;"	m	struct:ssd_meta_version

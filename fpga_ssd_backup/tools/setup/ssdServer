@@ -1,0 +1,50 @@
+#!/bin/bash
+#
+# chkconfig: 345 98 01
+# description: operation for ssd
+# version: 1.0 suijulei - ssdServer
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+lockfile=/var/lock/subsys/ssdServer
+PATH=$PATH:/usr/local/sbin
+PATH=$PATH:/usr/bin
+SERVER=
+
+RETVAL=0
+
+start() {
+    echo "ssdServer starting............."
+    python ${SERVER} -t start
+    RETVAL=$?
+    [ ${RETVAL} -eq 0 ] && touch ${lockfile}
+    return ${RETVAL}
+}
+stop() {
+    echo "ssdServer stopping.............."
+    python ${SERVER} -t stop
+    RETVAL=$?
+	if [ ${RETVAL} -eq 0 ]; then
+		rm -f ${lockfile}
+	fi
+}
+
+# See how we were called.
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+    echo "Usage: {start|stop|restart}"
+    exit 1
+esac
+
+exit $RETVAL

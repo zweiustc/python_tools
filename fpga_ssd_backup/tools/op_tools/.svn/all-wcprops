@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/inf/hw/!svn/ver/1393/trunk/ssd/tools/op_tools
+END
+ssd_id_to_channel.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/inf/hw/!svn/ver/1057/trunk/ssd/tools/op_tools/ssd_id_to_channel.c
+END
+ssd_read_id.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/inf/hw/!svn/ver/1393/trunk/ssd/tools/op_tools/ssd_read_id.c
+END
+open.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/inf/hw/!svn/ver/1393/trunk/ssd/tools/op_tools/open.c
+END
+ssd_error.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/inf/hw/!svn/ver/990/trunk/ssd/tools/op_tools/ssd_error.c
+END
+ssd_bad_blocks.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/inf/hw/!svn/ver/1172/trunk/ssd/tools/op_tools/ssd_bad_blocks.py
+END
+util_erasetable.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/inf/hw/!svn/ver/980/trunk/ssd/tools/op_tools/util_erasetable.c
+END
+init_newcard.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/inf/hw/!svn/ver/982/trunk/ssd/tools/op_tools/init_newcard.c
+END
+analysis_flush_data.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/inf/hw/!svn/ver/1393/trunk/ssd/tools/op_tools/analysis_flush_data.c
+END
+ssd_erase_state.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/inf/hw/!svn/ver/1393/trunk/ssd/tools/op_tools/ssd_erase_state.py
+END
+ssd_check_all.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/inf/hw/!svn/ver/1393/trunk/ssd/tools/op_tools/ssd_check_all.c
+END
+ssd_read_data_in_id.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/inf/hw/!svn/ver/1221/trunk/ssd/tools/op_tools/ssd_read_data_in_id.c
+END
+ssd_stress_test.sh
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/inf/hw/!svn/ver/1393/trunk/ssd/tools/op_tools/ssd_stress_test.sh
+END
+close_force.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/inf/hw/!svn/ver/981/trunk/ssd/tools/op_tools/close_force.c
+END
+ssd_checkcrc_allid.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/inf/hw/!svn/ver/977/trunk/ssd/tools/op_tools/ssd_checkcrc_allid.c
+END
+ssd_mark_bad_block.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/inf/hw/!svn/ver/1163/trunk/ssd/tools/op_tools/ssd_mark_bad_block.c
+END
+ssd_stat.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/inf/hw/!svn/ver/1023/trunk/ssd/tools/op_tools/ssd_stat.c
+END
+ssd_erase_id.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/inf/hw/!svn/ver/1029/trunk/ssd/tools/op_tools/ssd_erase_id.c
+END
+ssd_noah_badblock.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/inf/hw/!svn/ver/1172/trunk/ssd/tools/op_tools/ssd_noah_badblock.py
+END
+ssd_check_table.sh
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/inf/hw/!svn/ver/1217/trunk/ssd/tools/op_tools/ssd_check_table.sh
+END
+ssd_read_flush.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/inf/hw/!svn/ver/1246/trunk/ssd/tools/op_tools/ssd_read_flush.c
+END
+ssd_noah.sh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/inf/hw/!svn/ver/1112/trunk/ssd/tools/op_tools/ssd_noah.sh
+END
+ssd_ls.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/inf/hw/!svn/ver/987/trunk/ssd/tools/op_tools/ssd_ls.c
+END
+60-BaiduSSD.rules
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/inf/hw/!svn/ver/1001/trunk/ssd/tools/op_tools/60-BaiduSSD.rules
+END
+ssd_mark_erase_count.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/inf/hw/!svn/ver/1163/trunk/ssd/tools/op_tools/ssd_mark_erase_count.c
+END
+auto_mark_bad_block.sh
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/inf/hw/!svn/ver/1166/trunk/ssd/tools/op_tools/auto_mark_bad_block.sh
+END
+ssd_read_table.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/inf/hw/!svn/ver/1393/trunk/ssd/tools/op_tools/ssd_read_table.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/inf/hw/!svn/ver/1393/trunk/ssd/tools/op_tools/Makefile
+END
+ssd_get_free_blocks.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/inf/hw/!svn/ver/1173/trunk/ssd/tools/op_tools/ssd_get_free_blocks.py
+END

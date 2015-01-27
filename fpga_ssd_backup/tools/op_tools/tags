@@ -1,0 +1,150 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+ALL	ssd_stat.c	/^	ALL = 4,$/;"	e	enum:TYPE	file:
+ARRAY	ssd_stat.c	9;"	d	file:
+BAD_BLOCK_ERASE_COUNT	ssd_mark_erase_count.c	13;"	d	file:
+BLOCKS	ssd_stat.c	12;"	d	file:
+BLOCKSIZE	ssd_check_all.c	5;"	d	file:
+BLOCK_BASE_FLASH_BAIDU	ssd_mark_erase_count.c	12;"	d	file:
+BLOCK_PER_ROW	ssd_mark_erase_count.c	5;"	d	file:
+BUFFER_LINE	ssd_mark_erase_count.c	4;"	d	file:
+BUFSIZE	ssd_stat.c	8;"	d	file:
+CHECK_ALL	Makefile	/^CHECK_ALL=ssd_check_all$/;"	m
+CLOSE_FORCE	Makefile	/^CLOSE_FORCE=close_force$/;"	m
+CRC	ssd_check_all.c	13;"	d	file:
+CRC_BLOCK_HEADER	ssd_read_id.c	12;"	d	file:
+CRC_DATA	ssd_check_all.c	18;"	d	file:
+CRC_DATA	ssd_read_data_in_id.c	9;"	d	file:
+CRC_DATA	ssd_read_id.c	8;"	d	file:
+CRC_DATA_BIT	ssd_check_all.c	20;"	d	file:
+CRC_DATA_BIT	ssd_read_data_in_id.c	11;"	d	file:
+CRC_DATA_BIT	ssd_read_id.c	10;"	d	file:
+CRC_POLY	ssd_check_all.c	19;"	d	file:
+CRC_POLY	ssd_read_data_in_id.c	10;"	d	file:
+CRC_POLY	ssd_read_id.c	9;"	d	file:
+CRC_POLY_BIT	ssd_check_all.c	21;"	d	file:
+CRC_POLY_BIT	ssd_read_data_in_id.c	12;"	d	file:
+CRC_POLY_BIT	ssd_read_id.c	11;"	d	file:
+DATABLOCKS	ssd_check_all.c	6;"	d	file:
+DELETE	ssd_stat.c	/^	DELETE = 2,$/;"	e	enum:TYPE	file:
+ERASE	ssd_check_all.c	10;"	d	file:
+ERASE_ID	Makefile	/^ERASE_ID=ssd_erase_id$/;"	m
+ERROR	Makefile	/^ERROR=ssd_error$/;"	m
+FLAGS	Makefile	/^FLAGS=ssdapi -g$/;"	m
+FPGAS_HUAWEI	ssd_mark_erase_count.c	7;"	d	file:
+FREE	ssd_stat.c	/^	FREE = 3,$/;"	e	enum:TYPE	file:
+ID2CHANNEL	Makefile	/^ID2CHANNEL=ssd_id_to_channel$/;"	m
+INCLUDE	Makefile	/^INCLUDE=..\/..\/api\/output\/include$/;"	m
+INIT_NEWCARD	Makefile	/^INIT_NEWCARD=init_newcard$/;"	m
+LIB	Makefile	/^LIB=..\/..\/api\/output\/lib$/;"	m
+MARK_BLOCK	Makefile	/^MARK_BLOCK=ssd_mark_bad_block$/;"	m
+MARK_ERASE_COUNT	Makefile	/^MARK_ERASE_COUNT=ssd_mark_erase_count$/;"	m
+MAXVALUE	ssd_stat.c	10;"	d	file:
+MAX_FILE_SIZE	ssd_mark_erase_count.c	3;"	d	file:
+OPEN	Makefile	/^OPEN=open$/;"	m
+PAGES	ssd_stat.c	11;"	d	file:
+PFLASH_PER_FPGA_HUAWEI	ssd_mark_erase_count.c	9;"	d	file:
+PLANE_PER_CHANNEL	ssd_mark_erase_count.c	15;"	d	file:
+READ	ssd_stat.c	/^	READ = 0,$/;"	e	enum:TYPE	file:
+READ_BYTES	Makefile	/^READ_BYTES=ssd_read_data_in_id$/;"	m
+READ_FLUSH	Makefile	/^READ_FLUSH=ssd_read_flush$/;"	m
+READ_TABLE	Makefile	/^READ_TABLE=ssd_read_table$/;"	m
+RESERVED	ssd_check_all.c	4;"	d	file:
+SECBLOCKS	ssd_check_all.c	7;"	d	file:
+SIZE	ssd_checkcrc_allid.c	3;"	d	file:
+SIZE	ssd_read_data_in_id.c	2;"	d	file:
+SIZE	ssd_read_id.c	3;"	d	file:
+SSDSTAT	Makefile	/^SSDSTAT=ssd_stat$/;"	m
+SSD_CHANNELS_IN_S6	ssd_erase_id.c	4;"	d	file:
+SSD_CHANNELS_IN_S6	ssd_id_to_channel.c	4;"	d	file:
+SSD_CHECK_ALLID	Makefile	/^SSD_CHECK_ALLID=ssd_checkcrc_allid$/;"	m
+SSD_LS	Makefile	/^SSD_LS=ssd_ls$/;"	m
+SSD_S6_NUMS	ssd_erase_id.c	3;"	d	file:
+SSD_S6_NUMS	ssd_id_to_channel.c	3;"	d	file:
+TABLESIZE	ssd_read_table.c	5;"	d	file:
+TOOLS	Makefile	/^TOOLS=ssd_read_id$/;"	m
+TOTALBLOCKS	ssd_stat.c	13;"	d	file:
+TYPE	ssd_stat.c	/^enum TYPE {$/;"	g	file:
+UTIL_ERASETABLE	Makefile	/^UTIL_ERASETABLE=util_erasetable$/;"	m
+VFLASHES_PER_FPGA_HUAWEI	ssd_mark_erase_count.c	10;"	d	file:
+VFLASH_PER_PFLASH_HUAWEI	ssd_mark_erase_count.c	8;"	d	file:
+WRITE	ssd_stat.c	/^	WRITE = 1,$/;"	e	enum:TYPE	file:
+WRRD	ssd_check_all.c	9;"	d	file:
+argv2id	ssd_checkcrc_allid.c	/^struct BlockId argv2id(char *str)$/;"	f
+argv2id	ssd_read_data_in_id.c	/^struct BlockId argv2id(char *str)$/;"	f
+argv2id	ssd_read_id.c	/^struct BlockId argv2id(char *str)$/;"	f
+baidu_plane_to_baidu_channel	ssd_mark_erase_count.c	/^int baidu_plane_to_baidu_channel(int plane)$/;"	f
+blocks	ssd_check_all.c	/^	int blocks;$/;"	m	struct:operate	file:
+calcvalue	ssd_stat.c	/^static void calcvalue(u32_t arr1[][ALL], u32_t arr2[][ALL], int size)$/;"	f	file:
+channel	ssd_check_all.c	/^	int channel;$/;"	m	struct:operate	file:
+channel_goal	ssd_erase_id.c	/^int channel_goal = -1;$/;"	v
+char2id	ssd_check_all.c	/^struct BlockId char2id(const char *str)$/;"	f
+char2id	ssd_erase_id.c	/^struct BlockId char2id(const char *str)$/;"	f
+char2id	ssd_id_to_channel.c	/^struct BlockId char2id(const char *str)$/;"	f
+char2id	ssd_mark_bad_block.c	/^struct BlockId char2id(const char *str)$/;"	f
+check_error	ssd_check_all.c	/^int check_error = 0;$/;"	v
+delete_all_file	ssd_check_all.c	/^int delete_all_file(const char *fid, const struct stat *st, int flag)$/;"	f
+delete_all_file	ssd_erase_id.c	/^int delete_all_file(const char *fid, const struct stat *st, int flag)$/;"	f
+delete_channel	ssd_erase_id.c	/^int delete_channel(const char *fid, const struct stat *st, int flag)$/;"	f
+error_string	ssd_error.c	/^char *error_string[] = {$/;"	v
+get_all_file	ssd_ls.c	/^int get_all_file(const char *fid, const struct stat *st, int flag)$/;"	f
+get_all_file_detail	ssd_ls.c	/^int get_all_file_detail(const char *fid, const struct stat *st, int flag)$/;"	f
+get_channel_file	ssd_ls.c	/^int get_channel_file(const char *fid, const struct stat *st, int flag)$/;"	f
+get_channel_file_detail	ssd_ls.c	/^int get_channel_file_detail(const char *fid, const struct stat *st, int flag)$/;"	f
+getvalue	ssd_stat.c	/^static int getvalue(u32_t array[][ALL] , u32_t size)$/;"	f	file:
+help_info	ssd_mark_erase_count.c	/^void help_info(char *cmd)$/;"	f
+huawei2baidu	ssd_mark_erase_count.c	/^void huawei2baidu(int fpga, int vflash, int start_block, int erase_count[], ssd_u8 **baidu)$/;"	f
+huawei_block_to_baidu_block	ssd_mark_erase_count.c	/^ssd_u16 huawei_block_to_baidu_block(int plane, ssd_u16 block_huawei)$/;"	f
+huawei_fpga_vflash_to_baidu_channel	ssd_mark_erase_count.c	/^int huawei_fpga_vflash_to_baidu_channel(int fpga, int vflash)$/;"	f
+huawei_vflash_to_baidu_channel	ssd_mark_erase_count.c	/^int huawei_vflash_to_baidu_channel(int vflash)$/;"	f
+huawei_vflash_to_baidu_plane	ssd_mark_erase_count.c	/^int huawei_vflash_to_baidu_plane(int vflash)$/;"	f
+id2channel	ssd_erase_id.c	/^int id2channel(struct BlockId id)$/;"	f
+id2channel	ssd_id_to_channel.c	/^int id2channel(struct BlockId id)$/;"	f
+key	ssd_check_all.c	/^unsigned long long key;$/;"	v
+key	ssd_read_data_in_id.c	/^unsigned long long key;$/;"	v
+key	ssd_read_id.c	/^unsigned long long key;$/;"	v
+main	close_force.c	/^int main()$/;"	f
+main	init_newcard.c	/^int main()$/;"	f
+main	open.c	/^int main()$/;"	f
+main	ssd_check_all.c	/^int main(int argc, char *argv[])$/;"	f
+main	ssd_checkcrc_allid.c	/^int main(int argc, char* argv[])$/;"	f
+main	ssd_erase_id.c	/^int main(int argc, char* argv[])$/;"	f
+main	ssd_error.c	/^int main(int argc, char *argv[])$/;"	f
+main	ssd_id_to_channel.c	/^int main(int argc, char* argv[])$/;"	f
+main	ssd_ls.c	/^int main(int argc, char *argv[])$/;"	f
+main	ssd_mark_bad_block.c	/^int main(int argc, char* argv[])$/;"	f
+main	ssd_mark_erase_count.c	/^int main(int argc, char *argv[])$/;"	f
+main	ssd_read_data_in_id.c	/^int main(int argc, char* argv[]) $/;"	f
+main	ssd_read_flush.c	/^int main(int argc, char* argv[])$/;"	f
+main	ssd_read_id.c	/^int main(int argc, char* argv[])$/;"	f
+main	ssd_read_table.c	/^int main(int argc, char *argv[])$/;"	f
+main	ssd_stat.c	/^int main(int argc, char *argv[])$/;"	f
+main	util_erasetable.c	/^int main(int argc, char *argv[])$/;"	f
+max_bad_blocks	ssd_bad_blocks.py	/^def max_bad_blocks():$/;"	f
+max_bad_blocks	ssd_noah_badblock.py	/^def max_bad_blocks():$/;"	f
+op	ssd_check_all.c	/^	int op;$/;"	m	struct:operate	file:
+operate	ssd_check_all.c	/^typedef struct operate {$/;"	s	file:
+operate_blocks	ssd_check_all.c	/^void operate_blocks(operate_t ope)$/;"	f
+operate_t	ssd_check_all.c	/^} operate_t;$/;"	t	file:
+plane_offset	ssd_mark_erase_count.c	/^int plane_offset(int plane)$/;"	f
+print_channel	util_erasetable.c	/^void print_channel(int channel)$/;"	f
+print_head	util_erasetable.c	/^void print_head(void)$/;"	f
+print_table	ssd_read_table.c	/^void print_table(char *table, int type, int detail)$/;"	f
+print_total	util_erasetable.c	/^void print_total(void)$/;"	f
+printinfo	ssd_stat.c	/^static void printinfo(u32_t array[][ALL], int size, int interval, int page)$/;"	f	file:
+printsingle	ssd_stat.c	/^static void printsingle(u32_t array[][ALL], int channel, int interval, int page)$/;"	f	file:
+printtotal	ssd_stat.c	/^static void printtotal(u32_t array[][ALL], int interval, int page)$/;"	f	file:
+proc_path	ssd_stat.c	/^char *proc_path = "\/proc\/Baidu_ssd_info\/speed";$/;"	v
+read_addr_table	ssd_read_table.c	/^int read_addr_table(int channel, char *buf)$/;"	f
+read_erase_table	ssd_read_table.c	/^int read_erase_table(int channel, char *buf)$/;"	f
+read_table	ssd_read_table.c	/^int read_table(int channel, int type, int detail)$/;"	f
+ssd_free_blocks	ssd_get_free_blocks.py	/^def ssd_free_blocks():$/;"	f
+table	ssd_check_all.c	/^unsigned long long table[256];$/;"	v
+table	ssd_read_data_in_id.c	/^unsigned long long table[256];$/;"	v
+table	ssd_read_id.c	/^unsigned long long table[256];$/;"	v
+u32_t	ssd_stat.c	/^typedef unsigned int u32_t;$/;"	t	file:
+worker	ssd_check_all.c	/^void *worker(void *arg)$/;"	f

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/inf/hw/!svn/ver/1018/trunk/ssd/systest/src/performance
+END
+test_single_channel_erase_perform.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/performance/test_single_channel_erase_perform.c
+END
+test_multi_channel_write_perform.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/inf/hw/!svn/ver/1016/trunk/ssd/systest/src/performance/test_multi_channel_write_perform.c
+END
+test_multi_channel_read_perform.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/inf/hw/!svn/ver/1016/trunk/ssd/systest/src/performance/test_multi_channel_read_perform.c
+END
+test_multi_channel_erase_perform.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/performance/test_multi_channel_erase_perform.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/inf/hw/!svn/ver/1018/trunk/ssd/systest/src/performance/Makefile
+END
+test_single_channel_write_perform.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/inf/hw/!svn/ver/1016/trunk/ssd/systest/src/performance/test_single_channel_write_perform.c
+END
+test_single_channel_read_perform.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/inf/hw/!svn/ver/1004/trunk/ssd/systest/src/performance/test_single_channel_read_perform.c
+END

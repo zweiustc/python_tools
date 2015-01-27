@@ -1,0 +1,10 @@
+[open]
+fault_enable_1=0;
+fault_revalue_1=-2;
+fault_random_1=100;
+fault_enable_2=0;
+fault_revalue_2=-4;
+fault_random_2=100;
+fault_enable_3=0;
+fault_revalue_3=-22;
+fault_random_3=100;

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/inf/hw/!svn/ver/998/trunk/ssd/tools/cfg_tools
+END
+rd_reg_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/inf/hw/!svn/ver/998/trunk/ssd/tools/cfg_tools/rd_reg_test.c
+END
+cfg_online.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/inf/hw/!svn/ver/997/trunk/ssd/tools/cfg_tools/cfg_online.c
+END
+wr_reg_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/inf/hw/!svn/ver/998/trunk/ssd/tools/cfg_tools/wr_reg_test.c
+END
+cfg_s6.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/inf/hw/!svn/ver/998/trunk/ssd/tools/cfg_tools/cfg_s6.c
+END
+cfg_online.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/inf/hw/!svn/ver/997/trunk/ssd/tools/cfg_tools/cfg_online.h
+END
+cfg_s6-400000.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/inf/hw/!svn/ver/998/trunk/ssd/tools/cfg_tools/cfg_s6-400000.c
+END
+cfg_v5.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/inf/hw/!svn/ver/998/trunk/ssd/tools/cfg_tools/cfg_v5.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/inf/hw/!svn/ver/998/trunk/ssd/tools/cfg_tools/Makefile
+END
+cfg_flash.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/inf/hw/!svn/ver/998/trunk/ssd/tools/cfg_tools/cfg_flash.c
+END

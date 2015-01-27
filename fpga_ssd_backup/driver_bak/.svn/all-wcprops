@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/inf/hw/!svn/ver/1248/trunk/ssd/driver
+END
+ssd_type.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/inf/hw/!svn/ver/1248/trunk/ssd/driver/ssd_type.h
+END
+ssd_drv.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/inf/hw/!svn/ver/1248/trunk/ssd/driver/ssd_drv.c
+END
+build.sh
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/inf/hw/!svn/ver/1002/trunk/ssd/driver/build.sh
+END
+ssd_drv.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/inf/hw/!svn/ver/1177/trunk/ssd/driver/ssd_drv.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/inf/hw/!svn/ver/1024/trunk/ssd/driver/Makefile
+END

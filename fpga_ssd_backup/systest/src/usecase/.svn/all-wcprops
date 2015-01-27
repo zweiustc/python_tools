@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/inf/hw/!svn/ver/1087/trunk/ssd/systest/src/usecase
+END
+test_multi_channel_full_channel_compare.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/inf/hw/!svn/ver/1062/trunk/ssd/systest/src/usecase/test_multi_channel_full_channel_compare.c
+END
+test_multi_channel_write_read_delete.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/inf/hw/!svn/ver/1087/trunk/ssd/systest/src/usecase/test_multi_channel_write_read_delete.c
+END

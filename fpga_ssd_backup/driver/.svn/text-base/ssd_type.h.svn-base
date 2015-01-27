@@ -1,0 +1,257 @@
+/*
+ *  h/ssd_type.h
+ *
+ *   define types 
+ *
+ *  Copyright (C) 2001 baidu.com
+ *
+ *  2011-10-24  create by wangyong<wangyong03@baidu.com>
+*/
+
+#ifndef SSD_TYPE_INCLUDED
+#define SSD_TYPE_INCLUDED
+
+/**************************************
+ *      Constants 
+ **************************************/
+#define SSD_PAGE_SIZE  8192
+#define SSD_PAGES_PER_BLOCK 256
+#define SSD_BLOCK_SIZE (SSD_PAGE_SIZE * SSD_PAGES_PER_BLOCK)
+#define SSD_PAGE_SHIFT 13 
+#define SSD_BLOCK_SHIFT 21
+
+
+#define SSD_TABLE_TYPE_BITS 2
+#define SSD_TABLE_TYPE_MASK 0x3 //2bits
+enum TABLE_TYPE {
+    TABLE_ERASE_TYPE = 0,
+    TABLE_ADDR_TYPE  = 1,
+    TABLE_TYPE_COUNT = 2,
+};
+
+
+
+/* the user param is 64bits, while the kernel param is 32bits */
+#define SSD_MAX_PAGE  ((1ULL << 32) * SSD_PAGE_SIZE - 1)
+#define SSD_MAX_BLOCK ((1ULL << 32) * SSD_BLOCK_SIZE - 1)
+
+/* the number of s6 chips in ssd */
+#define SSD_S6_NUMS 4
+/* the number of channels in each s6 chip */
+#define SSD_CHANNELS_IN_S6 11
+
+#define SSD_MAX_CHANNEL (SSD_S6_NUMS * SSD_CHANNELS_IN_S6)
+
+/**************************************
+ *      Data types
+ **************************************/ 
+
+/* define the basic underlying data types */
+typedef int ssd_ret;
+typedef int ssd_status;    
+typedef unsigned char ssd_u8;    
+typedef char ssd_s8;    
+typedef unsigned short ssd_u16;
+typedef short ssd_s16;
+typedef int ssd_s32;
+typedef unsigned int ssd_u32;
+/*for debug*/
+#define __64BIT__
+#ifdef __64BIT__
+typedef unsigned long ssd_u64;
+typedef long ssd_s64;
+#else
+typedef unsigned long long ssd_u64;
+typedef long long ssd_s64;
+#endif
+
+typedef struct ssd_info {
+    ssd_u8   driver_version;   
+    ssd_u8   planes_per_ch;    
+    ssd_u32  blocks_per_plane;   
+    ssd_u32  pages_per_block;   
+    ssd_u32  oob_size;
+    ssd_u32  ram_size;       
+    ssd_u32  page_nums;  /* the number of pages per channel */
+    ssd_u32  block_nums;  /* the number of blocks per channel */
+    ssd_status status[SSD_MAX_CHANNEL];
+    int flash_cur_addrtable[SSD_MAX_CHANNEL];
+    int flash_cur_erasetable[SSD_MAX_CHANNEL];
+
+}ssd_info_t; 
+
+typedef struct ioctl_channel_op_user {
+    ssd_u32 start;        /* the start addr */ 
+    ssd_u32 len;      
+    ssd_u8* buf;         /* the user buffer address */
+    ssd_u8 channel;    
+} ioctl_channel_op_user_t;  
+
+typedef struct reg_write_param {
+    uint64_t addr;
+    uint64_t value;
+} reg_write_praram_t;
+
+
+/* id struct */
+struct ssd_blockid
+{
+    ssd_u64 m_nLow;  
+    ssd_u64 m_nHigh;
+};
+
+/* param struct of ssd write */
+struct ssd_write_param
+{
+    struct ssd_blockid id;
+    ssd_u8*  buf;         
+    ssd_u32  len; 
+};
+
+/* param struct of ssd read */
+struct ssd_read_param
+{
+    struct ssd_blockid id;
+    ssd_u8*  buf;         
+    ssd_u32  len; 
+    ssd_u32  offset;
+};
+
+/* param struct of table read */
+struct ssd_table_param
+{
+    ssd_u8* usr_buf;    
+    ssd_u8 channel;
+    ssd_u8 type;
+};
+
+struct ssd_write_retry_param
+{
+    struct ssd_blockid id;
+    ssd_u8*  buf;         
+    ssd_u32  len; 
+    ssd_u8  block_offset;   // 0 to 4 
+};
+
+struct ssd_readid_param
+{
+    ssd_u8* usr_buf;
+};
+
+#define PARAM_ID 0
+#define PARAM_BLOCK 1
+#define INVALID_VALUE ((ssd_u16)(-1))
+#define BAD_BLOCK 1
+
+struct ssd_mark_bad_param
+{
+    ssd_u8 type; //0 param_id, 1 param_block
+    union {
+        struct ssd_blockid id;       
+        struct {
+            ssd_u16 block;
+            ssd_u16 channel;
+            ssd_u32 pad[3];
+        } param_block;
+    } u;
+};
+
+/*erase_buffer(struct erase_entry_map in ssd_drv.h):
+ *@block index
+ *@struct erase_entry
+ *erase_buffer size = count * sizeof(struct erase_entry_map)
+ */
+struct ssd_mark_erase_count_param
+{
+	ssd_u8 channel;
+	ssd_u16 count;
+	ssd_u8 *erase_buffer;
+};
+
+// meta version struct
+struct ssd_meta_version
+{
+    ssd_u16 block;
+    ssd_u8 page;
+    ssd_u64 version;
+    ssd_u8 *buff;
+    ssd_u8 version_flag;
+};
+
+/**************************************
+ *      Macros
+ **************************************/ 
+ /* IOCTL_IOC_MAGIC is the magic ioctl number of driver */
+#define IOCTL_IOC_MAGIC 0x86
+#define IOCTL_OPEN               _IO(IOCTL_IOC_MAGIC, 1)
+#define IOCTL_CLOSE              _IO(IOCTL_IOC_MAGIC, 2)
+#define IOCTL_FLUSH              _IO(IOCTL_IOC_MAGIC, 3)
+
+#define IOCTL_DELETE             _IOW(IOCTL_IOC_MAGIC, 4, struct ssd_blockid)
+#define IOCTL_WRITE              _IOW(IOCTL_IOC_MAGIC, 5, struct ssd_write_param)
+#define IOCTL_READ               _IOW(IOCTL_IOC_MAGIC, 6, struct ssd_read_param)
+#define IOCTL_READ_TABLE         _IOW(IOCTL_IOC_MAGIC, 7, struct ssd_table_param)
+#define IOCTL_WRITE_RETRY        _IOW(IOCTL_IOC_MAGIC, 8, struct ssd_write_retry_param)
+#define IOCTL_READ_ID_TABLE      _IOW(IOCTL_IOC_MAGIC, 9, struct ssd_readid_param)
+
+#define IOCTL_UNITTEST           _IO(IOCTL_IOC_MAGIC, 10)
+#define IOCTL_SYS_INIT           _IO(IOCTL_IOC_MAGIC, 11)
+
+#define IOCTL_REG_READ           _IOW(IOCTL_IOC_MAGIC, 12, struct ssd_regrd_param)
+#define IOCTL_REG_WRITE          _IOW(IOCTL_IOC_MAGIC, 13, struct ssd_regwr_param)
+
+#define IOCTL_MARK_BAD_BLOCK     _IOW(IOCTL_IOC_MAGIC, 14, struct ssd_mark_bad_param)
+#define IOCTL_MARK_ERASE_COUNT   _IOW(IOCTL_IOC_MAGIC, 15, struct ssd_mark_erase_count_param)
+ #define IOCTL_READ_FLUSH       _IOW(IOCTL_IOC_MAGIC, 16, struct ssd_meta_version)
+
+/* function return values */
+ enum SSD_ERROR_TYPE{
+    SSD_ERROR  = (-1),
+    SSD_OK = 0,
+    SSD_ERR_START_PAGE_ALIGN = 1,
+    SSD_ERR_LEN_PAGE_ALIGN = 2,
+    SSD_ERR_START_BLOCK_ALIGN = 3,
+    SSD_ERR_LEN_BLOCK_ALIGN = 4,
+    SSD_ERR_PARAM_OVERFLOW = 5,
+    SSD_ERR_PARAM_WRLEN = 6,
+    SSD_ERR_NULL = 7,
+    SSD_ERR_NOMEM = 8,
+    SSD_ERR_TIMEOUT = 9,
+    SSD_ERR_NO_DEV = 10,
+    SSD_ERR_NOT_SSD = 11,
+    SSD_ERR_DMA_MAP = 12,
+    SSD_ERR_DEL_TIMER = 13,
+    SSD_ERR_COPY_FROM_USER = 14,
+    SSD_ERR_COPY_TO_USER = 15,
+    SSD_ERR_CHANNEL = 16, /* the channel status is disable */
+    SSD_ERR_SSD = 17, /* the ssd status is disable */
+    SSD_ERR_WAIT = 18, /* the operation is wait for complete */
+    SSD_ERR_BAD_BLOCK = 19,
+    SSD_ERR_NO_INVALID_BLOCKS = 20,
+    SSD_ERR_TABLE_TYPE = 21,
+    SSD_ERR_OEPN_DEV_FAILED = 22,
+    SSD_ERR_NO_VALID_FD = 23,
+    SSD_ERR_NOT_OPENED = 24,
+    SSD_ERR_NOT_CLOSED = 25,
+    SSD_ERR_ALLOC_BLOCK = 26,
+    SSD_ID_NO_EXIST = 27,
+    SSD_ID_ALREADY_EXIST = 28,
+    SSD_ID_MAP_ERROR = 29,
+    SSD_ERR_NO_VALID_RESERVE = 30,
+    SSD_ERR_META_BLOCK_ALIGN = 31,
+    ENOMETA = 32,
+    EREADFLUSH = 33,
+    EMETAUNVAL = 34,
+    EIDUNVAL = 35,
+    ETABLEDATA = 36,
+    SSD_ERR_INVALID_PARAM = 37,
+    SSD_ERR_NOT_BAD_BLOCK = 38,
+};
+
+#endif /* SSD_TYPE_INCLUDED */
+/*----------------------------------------------------------------------------*
+REV #  DATE       BY    REVISION DESCRIPTION
+-----  --------  -----  ------------------------------------------------------
+0001   11/10/24   wangyong   Initial version.
+*----------------------------------------------------------------------------*/
+
