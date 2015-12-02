@@ -27,7 +27,7 @@ class Mysql(object):
     def insert_instance(self, name='test_pressure_mysql',
                         count=100000):
         try:
-            start_time = time.clock()
+            start_time = time.time()
             self.name = name
             for i in range(count):
                 user_id = uuid.uuid4()
@@ -53,7 +53,7 @@ class Mysql(object):
                     self.db.commit()
                 except:
                     self.db.rollback()
-            end_time = time.clock()
+            end_time = time.time()
             print "Insert %s item to instance cost: %s seconds" % \
                   (count, end_time - start_time)
         except:
@@ -65,43 +65,44 @@ class Mysql(object):
         delete_name = name or self.name
         sql = "DELETE FROM instances WHERE hostname='%s'" % delete_name
         try:
-            start_time = time.clock()
+            start_time = time.time()
             self.cursor.execute(sql)
             self.db.commit()
-            end_time = time.clock()
-            print "Delete inserted data from instances cost: %s seconds" % \
-                  (end_time - start_time)
         except Exception as err:
             self.db.rollback()
         finally:
+            end_time = time.time()
+            print "Delete inserted data from instances cost: %s seconds" % \
+                  (end_time - start_time)
             self.db.close()
 
     def get_instance_num(self, name="test_pressure_mysql"):
         get_name = name or self.name
         sql = "select count(id) from instances where hostname='%s'" % get_name
+        result = None
         try:
-            start_time = time.clock()
+            start_time = time.time()
             self.cursor.execute(sql)
             result = self.cursor.fetchall()
-            end_time = time.clock()
-            print "Get intems num of instance cost: %s seconds" % \
-                  (end_time - start_time)
-            print "Current items num of instances database: %s" % result
         except Exception as err:
             self.db.rollback()
         finally:
+            end_time = time.time()
+            print "Get intems num of instance cost: %s seconds" % \
+                  (end_time - start_time)
+            print "Current items num of instances database: %s" % result
             self.db.close()
 
     def get_instance(self, instance_id):
         sql = "select * from instances where id='%s'" % instance_id
         try:
-            start_time = time.clock()
+            start_time = time.time()
             self.cursor.execute(sql)
             result = self.cursor.fetchall()
         except Exception as err:
             self.db.rollback()
         finally:
-            end_time = time.clock()
+            end_time = time.time()
             print "Search instance %s cost: %s seconds" % \
                   (instance_id, end_time - start_time)
             self.db.close()
@@ -109,7 +110,7 @@ class Mysql(object):
     def insert_volume(self, name='test_pressure_mysql',
                       count=100000):
         try:
-            start_time = time.clock()
+            start_time = time.time()
             self.name = name
             for i in range(count):
                 user_id = uuid.uuid4()
@@ -133,7 +134,7 @@ class Mysql(object):
                     self.db.commit()
                 except:
                     self.db.rollback()
-            end_time = time.clock()
+            end_time = time.time()
             print "Insert %s item to volumes cost: %s seconds" % \
                   (count, end_time - start_time)
         except:
@@ -145,43 +146,43 @@ class Mysql(object):
         delete_name = name or self.name
         sql = "DELETE FROM volumes WHERE display_name='%s'" % delete_name
         try:
-            start_time = time.clock()
+            start_time = time.time()
             self.cursor.execute(sql)
             self.db.commit()
-            end_time = time.clock()
-            print "Delete inserted data from volumes cost: %s seconds" % \
-                  (end_time - start_time)
         except Exception as err:
             self.db.rollback()
         finally:
+            end_time = time.time()
+            print "Delete inserted data from volumes cost: %s seconds" % \
+                  (end_time - start_time)
             self.db.close()
 
     def get_volume_num(self, name="test_pressure_mysql"):
         get_name = name or self.name
         sql = "select count(id) from volumes where display_name='%s'" % get_name
         try:
-            start_time = time.clock()
+            start_time = time.time()
             self.cursor.execute(sql)
             result = self.cursor.fetchall()
-            end_time = time.clock()
-            print "Get intems num of volume cost: %s seconds" % \
-                  (end_time - start_time)
-            print "Current items num of volumes database: %s" % result
         except Exception as err:
             self.db.rollback()
         finally:
+            end_time = time.time()
+            print "Get intems num of volume cost: %s seconds" % \
+                  (end_time - start_time)
+            print "Current items num of volumes database: %s" % result
             self.db.close()
 
     def get_volume(self, volume_id):
         sql = "select * from volumes where id='%s'" % volume_id
         try:
-            start_time = time.clock()
+            start_time = time.time()
             self.cursor.execute(sql)
             result = self.cursor.fetchall()
         except Exception as err:
             self.db.rollback()
         finally:
-            end_time = time.clock()
+            end_time = time.time()
             print "Search volumes %s cost: %s seconds" % \
                   (volume_id, end_time - start_time)
             self.db.close()
@@ -189,7 +190,7 @@ class Mysql(object):
     def insert_port(self, name='test_pressure_mysql',
                       count=100000):
         try:
-            start_time = time.clock()
+            start_time = time.time()
             self.name = name
             for i in range(count):
                 tenant_id = uuid.uuid4()
@@ -213,7 +214,7 @@ class Mysql(object):
                     self.db.commit()
                 except:
                     self.db.rollback()
-            end_time = time.clock()
+            end_time = time.time()
             print "Insert %s item to port cost: %s seconds" % \
                   (count, end_time - start_time)
         except:
@@ -225,43 +226,43 @@ class Mysql(object):
         delete_name = name or self.name
         sql = "DELETE FROM ports WHERE name='%s'" % delete_name
         try:
-            start_time = time.clock()
+            start_time = time.time()
             self.cursor.execute(sql)
             self.db.commit()
-            end_time = time.clock()
-            print "Delete inserted data from ports cost: %s seconds" % \
-                  (end_time - start_time)
         except Exception as err:
             self.db.rollback()
         finally:
+            end_time = time.time()
+            print "Delete inserted data from ports cost: %s seconds" % \
+                  (end_time - start_time)
             self.db.close()
 
     def get_port_num(self, name="test_pressure_mysql"):
         get_name = name or self.name
         sql = "select count(id) from ports where display_name='%s'" % get_name
         try:
-            start_time = time.clock()
+            start_time = time.time()
             self.cursor.execute(sql)
             result = self.cursor.fetchall()
-            end_time = time.clock()
-            print "Get intems num of ports cost: %s seconds" % \
-                  (end_time - start_time)
-            print "Current items num of ports database: %s" % result
         except Exception as err:
             self.db.rollback()
         finally:
+            end_time = time.time()
+            print "Get intems num of ports cost: %s seconds" % \
+                  (end_time - start_time)
+            print "Current items num of ports database: %s" % result
             self.db.close()
 
     def get_port(self, port_id):
         sql = "select * from ports where id='%s'" % port_id
         try:
-            start_time = time.clock()
+            start_time = time.time()
             self.cursor.execute(sql)
             result = self.cursor.fetchall()
         except Exception as err:
             self.db.rollback()
         finally:
-            end_time = time.clock()
+            end_time = time.time()
             print "Search ports %s cost: %s seconds" % \
                   (port_id, end_time - start_time)
             self.db.close()
