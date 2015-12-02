@@ -35,7 +35,7 @@ CINDER_BASE_URL = 'http://10.160.60.42:8776/v2'
 TEST_TENANT = 'admin'
 TEST_user = 'admin'
 TEST_passw0rd = 'openstack1'
-GUESTOS_PASSWD = 'kingsoft!@#123'
+GUESTOS_PASSWD = 'test'
 TEST_KEEP_ENV = False
 
 #external variables

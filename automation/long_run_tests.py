@@ -24,17 +24,17 @@ KEYSTONE_TOKEN_URL = 'http://' + KEYSTONE_HOST + ':5000/v2.0/tokens '
 NEUTRON_BASE_URL = 'http://' + KEYSTONE_HOST + ':9696/v2.0'
 CINDER_BASE_URL = 'http://' + KEYSTONE_HOST + ':8776/v2'
 NOVA_BASE_URL = 'http://' + KEYSTONE_HOST + ':8774/v2'
-TEST_TENANT = 'admin'
-TEST_TENANT_ID = '82bdaf4930854ae7a4b494dba9563f50'
+TEST_TENANT = 'longrun'
+TEST_TENANT_ID = 'b3acb7d2d5204786ab65d6acf9518f47'
 TEST_user = 'admin'
-TEST_passw0rd = 'openstack1'
-TEST_GUESTOS_PASSWD = 'test'
+TEST_passw0rd = 'admin@kingsoft'
+TEST_GUESTOS_PASSWD = 'kingsoft123!@#'
 
 TEST_SUBNET_CIDR = '192.168.0.0/24'
-TEST_EXTERNAL_NETWORK_ID = '3de42525-8bf2-4449-8677-4de6cffe2d32'
-TEST_IMAGE_ID = '470112e6-845b-4eaa-aa35-6bc567c6612f'
+TEST_EXTERNAL_NETWORK_ID = '947f7a44-6685-403c-b114-66ef3ded1661'
+TEST_IMAGE_ID = '59909769-0a17-4d34-94bc-703e24ffd775'
 TEST_SNAPSHOT_ID = '0770c568-bbfd-474f-8a9c-f254d4ce9164'
-TEST_FLAVOR_ID = '2'
+TEST_FLAVOR_ID = '3'
 TEST_NAME_FIX = str(time.time())
 
 global test_token
@@ -61,8 +61,7 @@ def send_http_request(method, request_url, body=None, request_headers={}):
         http_client.connect()
 
     http_client.putrequest(method,
-                           request_uri.encode(DEFAULT_HTTP_URI_CHARSET),
-                           {'skip_host': 1, 'skip_accept_encoding': 1})
+                           request_uri.encode(DEFAULT_HTTP_URI_CHARSET))
 
     for key, value in request_headers.items():
         http_client.putheader(key, value.encode(DEFAULT_HTTP_HEADER_CHARSET))
@@ -196,6 +195,72 @@ def http_delete(url):
         _get_Token()
         return http_delete(url)
     return (status, response_body)
+
+
+def monitor_user_login():
+    request_id = str(time.time())
+    time_point = time.strftime(LOG_TIME_FORMAT, time.localtime())
+    data = json.dumps(
+                      {
+                        "jsonrpc": "2.0",
+                        "method": "user.login",
+                        "params": {
+                            "user": "Admin",
+                            "password": "zabbix"
+                         },
+                        "id": 0
+                      })
+    headers = _get_common_headers(data)
+    log(time_point + " ID:" + request_id + " POST:http://10.160.60.66:80/zabbix/api_jsonrpc.php HEADERS:" + str(headers) + " BODY:" + data)
+    response = send_http_request('GET', 'http://10.160.60.66:80/zabbix/api_jsonrpc.php', data, headers)
+    status = response.status
+    response_body = response.read()
+    time_point = time.strftime(LOG_TIME_FORMAT, time.localtime())
+    log(time_point + " ID:" + request_id + " STATUS:" + str(status) + " BODY:" + response_body)
+    response_body_ob = json.loads(response_body)
+    authID = response_body_ob['result']
+    return authID
+
+
+def monitor_host_create(auth_id, instance_id, instance_ip):
+    hostip = instance_id
+    g_list=[{"groupid": "2"}]
+    t_list=[{"templateid": "10002"}]
+    if instance_id:
+        request_id = str(time.time())
+        time_point = time.strftime(LOG_TIME_FORMAT, time.localtime())
+        data = json.dumps(
+                 {
+                     "jsonrpc": "2.0",
+                     "method": "host.create",
+                     "params": {
+                         "host": instance_id,
+                         "interfaces": [
+                             {
+                                 "type": 1,
+                                 "main": 1,
+                                 "useip": 1,
+                                 "ip": instance_ip,
+                                 "dns": "",
+                                 "port": "10050"
+                             }
+                         ],
+                         "groups": g_list,
+                         "templates": t_list,
+                     },
+                     "auth": auth_id,
+                     "id": 1,
+                     })
+        headers = _get_common_headers(data)
+        log(time_point + " ID:" + request_id + " POST:http://10.160.60.66:80/zabbix/api_jsonrpc.php HEADERS:" + str(headers) + " BODY:" + data)
+        response = send_http_request('GET', 'http://10.160.60.66:80/zabbix/api_jsonrpc.php', data, headers)
+        status = response.status
+        response_body = response.read()
+        print response_body
+        time_point = time.strftime(LOG_TIME_FORMAT, time.localtime())
+        log(time_point + " ID:" + request_id + " STATUS:" + str(status) + " BODY:" + response_body)
+        response_body_ob = json.loads(response_body)
+        return response_body_ob["result"]["hostids"]
 
 
 def network_create():
@@ -338,10 +403,11 @@ def router_delete(router_id):
 
 def instance_create_by_image(network_id, securitygroup_id):
     url = NOVA_BASE_URL + "/" + TEST_TENANT_ID + "/servers"
+    time_point = time.strftime(LOG_TIME_FORMAT, time.localtime())
     request_body = json.dumps(
                               {
                                "server": {
-                                    "name": "auto_testInstance" + TEST_NAME_FIX,
+                                    "name": "auto_testInstance" + time_point,
                                     "imageRef": TEST_IMAGE_ID,
                                     "flavorRef": TEST_FLAVOR_ID,
                                     "max_count": 1,
@@ -397,12 +463,102 @@ def instance_find(instance_id):
     return json.loads(response_body)
 
 
+def instance_stop(instance_id):
+    url = NOVA_BASE_URL + "/%s/servers/%s/action" % (TEST_TENANT_ID, instance_id)
+    request_body = json.dumps(
+                              {
+                                "os-stop":None
+                              }
+                            )
+    status, response_body = http_post(url, request_body)
+    if status != 202:
+        raise Exception("instance stop failed")
+    return status
+
+
+def instance_start(instance_id):
+    url = NOVA_BASE_URL + "/%s/servers/%s/action" % (TEST_TENANT_ID, instance_id)
+    request_body = json.dumps(
+                              {
+                                "os-start":None
+                              }
+                            )
+    status, response_body = http_post(url, request_body)
+    if status != 202:
+        raise Exception("instance stop failed")
+    return status
+
+
+def instance_resize(instance_id, flavor_id):
+    url = NOVA_BASE_URL + "/%s/servers/%s/action" % (TEST_TENANT_ID, instance_id)
+    request_body = json.dumps(
+                              {
+                                "resize": {
+                                    "flavorRef": flavor_id
+                                }
+                              }
+                            )
+    status, response_body = http_post(url, request_body)
+    if status != 202:
+        raise Exception("instance resize failed")
+    return status
+
+
+def instance_resize_confirm(instance_id):
+    url = NOVA_BASE_URL + "/%s/servers/%s/action" % (TEST_TENANT_ID, instance_id)
+    request_body = json.dumps(
+                              {
+                                "confirmResize": None
+                              }
+                            )
+    status, response_body = http_post(url, request_body)
+    if status != 204:
+        raise Exception(("Server resize confirm %s failed") % instance_id)
+    return status
+
+
+def instance_live_migrate(instance_id):
+    url = NOVA_BASE_URL + "/%s/servers/%s/action" % (TEST_TENANT_ID, instance_id)
+    request_body = json.dumps(
+                              {
+                                "os-migrateLive":{
+                                    "disk_over_commit": False,
+                                    "block_migration": False,
+                                    "host":None
+                                }
+                              }
+                            )
+    status, response_body = http_post(url, request_body)
+    return status
+
+
 def instance_find_fix_ip(instance_id, network_name):
     response_body = instance_find(instance_id)
     for value in response_body["server"]["addresses"][network_name]:
         if value["OS-EXT-IPS:type"] == "fixed":
             return value["addr"], value["OS-EXT-IPS-MAC:mac_addr"]
     return None, None
+
+
+def instance_find_host(instance_id):
+    url = NOVA_BASE_URL + "/%s/servers/%s" % (TEST_TENANT_ID, instance_id)
+    status, response_body = http_get(url)
+    return json.loads(response_body)["server"]["OS-EXT-SRV-ATTR:host"]
+
+
+def instance_volume_attach(instance_id, volume_id):
+    url = NOVA_BASE_URL + "/%s/servers/%s/os-volume_attachments" % (TEST_TENANT_ID, instance_id)
+    request_body = json.dumps(
+                              {
+                                "volumeAttachment":{
+                                    "volumeId": volume_id
+                                }
+                              }
+                            )
+    status, response_body = http_post(url, request_body)
+    if status != 200:
+        raise Exception("volume attach failed")
+    return status
 
 
 def instance_delete(instance_id):
@@ -415,8 +571,8 @@ def instance_delete(instance_id):
 
 def instance_wait(instance_id, instance_status):
     url = NOVA_BASE_URL + "/" + TEST_TENANT_ID + "/servers/" + instance_id
-
-    while True:
+    count = 0
+    while count < 50:
         log("waiting for instance turn to " + str(instance_status))
         status, response_body = http_get(url)
         if status == 404:
@@ -430,6 +586,10 @@ def instance_wait(instance_id, instance_status):
         if response_body_ob["server"]["status"] == instance_status:
             return
         time.sleep(5)
+        count = count + 1
+    if count >= 50:
+        raise Exception("instance wait time out!")
+    log_main("wait count:" + str(count))
 
 
 def port_find_by_mac(instance_mac):
@@ -752,10 +912,7 @@ def volume_create(size=20):
                               {
                                 "volume": {
                                     "size": size,
-                                    "name": "auto_testVolume" + TEST_NAME_FIX,
-                                    "snapshot_id": TEST_SNAPSHOT_ID,
-                                    "attach_status": "detached",
-                                    "metadata": {}
+                                    "name": "auto_testVolume" + TEST_NAME_FIX
                                 }
                               }
                               )
@@ -949,6 +1106,8 @@ def instance_wait_sshable(floating_ip):
             ssh.close()
             count = count + 1
             time.sleep(5)
+    if count >= 50:
+        raise Exception("ssh failed for 50 times!")
     log_main("ssh failed count:" + str(count))
 
 
@@ -982,26 +1141,6 @@ def create_Networkenv():
         firewall_change_router(firewall_id, router_id)
         firewall_wait(firewall_id, "ACTIVE")
 
-        volume_id = volume_create()
-        env["volume_id"] = volume_id
-        volume_wait(volume_id, "available")
-
-        instance_id = None
-        if TEST_BOOT_VOLUME:
-            instance_id = instance_create_by_volume(network_id, securitygroup_id, volume_id)
-        else:
-            instance_id = instance_create_by_image(network_id, securitygroup_id)
-        env["instance_id"] = instance_id
-        instance_wait(instance_id, "ACTIVE")
-
-        instance_ip, instance_mac = instance_find_fix_ip(instance_id, network_name)
-        port_id = port_find_by_mac(instance_mac)
-        floatingip_id, floatingip_addr = floatingip_create(port_id)
-        env["floatingip_id"] = floatingip_id
-        refresh_arp_cache(floatingip_addr, router_id)
-        if not cmd_ping(floatingip_addr, 20):
-            log_main("Net work created but ping failed!")
-            return False
         return env
     except Exception, e:
         log_main(traceback.format_exc())
@@ -1220,72 +1359,78 @@ def testcase_vm_mul_create_delete():
     log_main("=======================testcase_vm_mul_create_delete start=================")
     env = create_Networkenv()
     log_main(str(env))
-    env["volume_ids"] = []
-    env["instance_ids"] = []
-    env["floatingip_ids"] = []
+    env["instances"] = []
     totalCreateVM = 0
     totalSuccess = 0
-    try:
-        network_id = env.get("network_id", None)
-        securitygroup_id = env.get("securitygroup_id", None)
-        network_name = env.get("network_name", None)
-        for i in range(TEST_VM_ROUND_COUNT):
-            for j in range(TEST_VM_COUNT):
-                volume_id = volume_create()
-                env["volume_ids"].append(volume_id)
-                volume_wait(volume_id, "available")
+    while True:
+        try:
+            network_id = env.get("network_id", None)
+            securitygroup_id = env.get("securitygroup_id", None)
+            network_name = env.get("network_name", None)
+            while len(env["instances"]) < 30:
+                instance = []
+                instance_id = instance_create_by_image(network_id, securitygroup_id)
 
-                instance_id = None
-                if TEST_BOOT_VOLUME:
-                    instance_id = instance_create_by_volume(network_id, securitygroup_id, volume_id)
-                else:
-                    instance_id = instance_create_by_image(network_id, securitygroup_id)
-                env["instance_ids"].append(instance_id)
+                instance.append(instance_id)
                 instance_wait(instance_id, "ACTIVE")
                 totalCreateVM = totalCreateVM + 1
 
                 instance_ip, instance_mac = instance_find_fix_ip(instance_id, network_name)
                 port_id = port_find_by_mac(instance_mac)
                 floatingip_id, floatingip_addr = floatingip_create(port_id)
-                env["floatingip_ids"].append(floatingip_id)
-                refresh_arp_cache(floatingip_addr, env["router_id"])
+                instance.append(floatingip_id)
+                instance.append(floatingip_addr)
                 if not cmd_ping(floatingip_addr, 20):
                     log_main("basic test case failed due to ping failed VM id:" + instance_id)
-                    if TEST_KEEP_ENV:
-                        env["volume_ids"].remove(volume_id)
-                        env["instance_ids"].remove(instance_id)
-                        env["floatingip_ids"].remove(floatingip_id)
                     continue
+                instance_wait_sshable(floatingip_addr)
+
+                monitor_token = monitor_user_login()
+                monitor_host_create(monitor_token, instance_id, instance_ip)
+
+                env["instances"].insert(0,instance)
                 totalSuccess = totalSuccess + 1
-                log_main("create vm seccuss :" + str(j))
-            while len(env["instance_ids"]) > 0:
-                id = env["instance_ids"].pop()
-                instance_delete(id)
-                instance_wait(id, None)
-            while len(env["volume_ids"]) > 0:
-                id = env["volume_ids"].pop()
-                volume_delete(id)
-                time.sleep(2)
-            while len(env["floatingip_ids"]) > 0:
-                id = env["floatingip_ids"].pop()
-                floatingip_delete(id)
-            log_main("round " + str(i) + " total created vm:" + str(totalCreateVM) + " totalSuccess:" + str(totalSuccess))
-        log_main("total created vm:" + str(totalCreateVM) + " totalSuccess:" + str(totalSuccess))
-        if TEST_KEEP_ENV and totalCreateVM == totalSuccess:
-            clear_env(env)
-        if totalCreateVM != totalSuccess:
+                log_main("create vm success :" + str(totalSuccess))
+            log_main("total created vm:" + str(totalCreateVM) + " totalSuccess:" + str(totalSuccess))
+            time.sleep(180)
+            instance_to_delete = env["instances"].pop()
+            instance_wait_sshable(instance_to_delete[2])
+
+            instance_stop(instance_to_delete[0])
+            instance_wait(instance_to_delete[0], "SHUTOFF")
+
+            instance_start(instance_to_delete[0])
+            instance_wait(instance_to_delete[0], "ACTIVE")
+            instance_wait_sshable(instance_to_delete[2])
+
+            instance_resize(instance_to_delete[0], "4")
+            instance_wait(instance_to_delete[0], "VERIFY_RESIZE")
+            instance_resize_confirm(instance_to_delete[0])
+            instance_wait(instance_to_delete[0], "ACTIVE")
+            instance_wait_sshable(instance_to_delete[2])
+            
+            volume_id = volume_create()
+            instance_volume_attach(instance_id, volume_id)
+
+            host_old = instance_find_host(instance_to_delete[0])
+            instance_live_migrate(instance_to_delete[0])
+            instance_wait(instance_to_delete[0], "ACTIVE")
+            instance_wait_sshable(instance_to_delete[2])
+            host_new = instance_find_host(instance_to_delete[0])
+            log_main("old host:" + host_old)
+            log_main("new host:" + host_new)
+            if host_old == host_new:
+                log_main("test case failed: live migration failed:" + str(instance_to_delete))
+                continue
+
+            instance_delete(instance_to_delete[0])
+            instance_wait(instance_to_delete[0], None)
+            floatingip_delete(instance_to_delete[1])
+            log_main("delete vm:" + str(instance_to_delete))
+        except Exception, e:
+            log_main(traceback.format_exc())
+            log_main("test case failed:" + str(e))
             log_main(str(env))
-            return False
-        return True
-    except Exception, e:
-        log_main(traceback.format_exc())
-        log_main("test case failed:" + str(e))
-        log_main(str(env))
-        return False
-    finally:
-        log_main("=======================testcase_vm_mul_create_delete end=================")
-        if not TEST_KEEP_ENV:
-            clear_env(env)
 
 
 def testcase_connectivity_between_two_vlan():
@@ -1434,6 +1579,4 @@ def run():
 
 
 #run()
-#run_case(testcase_vm_mul_create_delete)
-env1 = {'router_id': u'2c6a5360-006d-4d1e-9458-9d4344c1fe1b', 'network_id': u'b95dae27-969a-4c0b-8867-e7c80bb58fb9', 'floatingip_id': u'08ea9f0b-af1f-43e4-a0d4-98664d37adb9', 'subnet_id': u'b0865492-9b6e-4826-88a5-c82baa88b2e5', 'securitygroup_id': u'15d119e4-4cd7-44ae-a41d-8a4bb8e81dd5'}
-clear_env(env1)
+run_case(testcase_vm_mul_create_delete)

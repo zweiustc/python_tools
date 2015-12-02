@@ -1,0 +1,4 @@
+requires:
+oslo_config
+oslo_log
+oslo_serialization

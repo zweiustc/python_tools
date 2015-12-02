@@ -1,0 +1,32 @@
+# !/usr/bin/python
+
+import time
+import traceback
+import uuid
+
+from automation.clients import Manager
+from automation.common import exceptions
+from automation.common.utils import data_utils
+from automation.common import waiters
+from automation import config
+from automation.i18n import _LW
+from oslo_log import log as logging
+
+from testcases.base_ssh import BaseSSH
+
+CONF = config.CONF
+LOG = logging.getLogger(__name__)
+
+
+class MonitorBase(object):
+
+    def __init__(self, server_ip, user, passwd):
+        self.base_url = 'http://%s:80/zabbix/api_jsonrpc.php' % server_ip
+        header = \
+            {
+                "jsonrpc": "2.0",         
+                "method": "user.login",
+                "params": {
+                    "user": user,
+                    "password": "zabbix"
+            }
