@@ -63,8 +63,12 @@ class Mysql(object):
 
     def delete_instance(self, name='test_pressure_mysql'):
         delete_name = name or self.name
-        sql = "DELETE FROM instances WHERE hostname='%s'" % delete_name
         try:
+            # close the foreign key check
+            sql = "SET FOREIGN_KEY_CHECKS=0"
+            self.cursor.execute(sql)
+
+            sql = "DELETE FROM instances WHERE hostname='%s'" % delete_name
             start_time = time.time()
             self.cursor.execute(sql)
             self.db.commit()
@@ -144,8 +148,12 @@ class Mysql(object):
 
     def delete_volume(self, name='test_pressure_mysql'):
         delete_name = name or self.name
-        sql = "DELETE FROM volumes WHERE display_name='%s'" % delete_name
         try:
+            # close the foreign key check
+            sql = "SET FOREIGN_KEY_CHECKS=0"
+            self.cursor.execute(sql)
+
+            sql = "DELETE FROM volumes WHERE display_name='%s'" % delete_name
             start_time = time.time()
             self.cursor.execute(sql)
             self.db.commit()
@@ -224,8 +232,12 @@ class Mysql(object):
 
     def delete_port(self, name='test_pressure_mysql'):
         delete_name = name or self.name
-        sql = "DELETE FROM ports WHERE name='%s'" % delete_name
         try:
+            # close the foreign key check
+            sql = "SET FOREIGN_KEY_CHECKS=0"
+            self.cursor.execute(sql)
+
+            sql = "DELETE FROM ports WHERE name='%s'" % delete_name
             start_time = time.time()
             self.cursor.execute(sql)
             self.db.commit()
