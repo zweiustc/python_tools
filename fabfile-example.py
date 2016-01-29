@@ -5,6 +5,7 @@
 import os
 from fabric.api import env,local,cd,lcd,put,run
 from fabric.api import roles
+from fabric.api import parallel, serial
 
 env.roledefs = {
     'controller': ['root@10.160.57.66:22', 
@@ -17,6 +18,11 @@ env.passwords = {
     'root@10.160.57.68:22': 'password',
 }
 
+# parallel decorator make the task run parallelly
+# serial decorator make the task run serially
+# the default mode is serial
+
+@parallel
 @roles('controller')
 def sync_update():
     abs_dir = '/root/git/master/nova'
